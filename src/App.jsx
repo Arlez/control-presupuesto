@@ -6,6 +6,7 @@ import { generarId } from "./helpers";
 import ListadoGastos from "./components/ListadoGastos";
 
 function App() {
+  const [gastos, setGastos] = useState([]);
  
   const [presupuesto, setpresupuesto] = useState(0);
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);
@@ -13,7 +14,6 @@ function App() {
   const [modal, setModal] = useState(false);
   const [animarModal, setAnimarModal] = useState(false);
 
-  const [gastos, setGastos] = useState([]);
 
   const handleNuevoGasto = () => {
     setModal(true);
@@ -30,8 +30,9 @@ function App() {
   }
 
   return (
-    <>
+    <div className={modal ? 'fijar' : null}>
       <Header
+        gastos={gastos}
         presupuesto={presupuesto}
         setpresupuesto={setpresupuesto}
         isValidPresupuesto={isValidPresupuesto}
@@ -66,7 +67,7 @@ function App() {
             guardarGasto={guardarGasto}
           />
       }
-    </>
+    </div>
   )
 }
 
