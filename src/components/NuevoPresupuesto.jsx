@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import Mensaje from './Mensaje';
 
-const NuevoPresupuesto = ({presupuesto, setpresupuesto, setIsValidPresupuesto}) => {
+const NuevoPresupuesto = ({presupuesto, setPresupuesto, setIsValidPresupuesto}) => {
 
     const [mensaje, setmensaje] = useState('');
 
@@ -31,7 +31,7 @@ const NuevoPresupuesto = ({presupuesto, setpresupuesto, setIsValidPresupuesto}) 
                         placeholder="Añade tu Presupuesto"
                         min='0'
                         value={presupuesto}
-                        onChange={e => setpresupuesto(e.target.value)}
+                        onChange={e => setPresupuesto(e.target.value)}
                     />
                 </div>
 
